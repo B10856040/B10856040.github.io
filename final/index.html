@@ -7,12 +7,75 @@
     <title>B10856040</title>
 
     <style>
-
+        @media(max-width: 500px) {
+            nav ul li {
+                text-align: center;
+                display: block;
+                width: 100%
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        nav {
+            width: 100%;
+            /*導覽列寬度*/
+            background: lightpink;
+            height: 80px;
+            /*導覽列高度*/
+        }
+        
+        nav ul {
+            float: right;
+            /*顯示在右邊*/
+            margin-right: 20px;
+            /*距離左邊邊界20px*/
+        }
+        
+        nav ul li {
+            display: inline-block;
+            /*水平顯示標籤*/
+            line-height: 80px;
+            /*距離頂端80px*/
+            margin: 0px 30px;
+            /*margin: 上 右 下 左
+                                margin:  0 30 0 30(px)*/
+        }
+        
+        nav ul li a {
+            color: black;
+            font-size: 18px;
+        }
+        
+        label.logo {
+            color: black;
+            font-size: 30px;
+            line-height: 80px;
+            padding: 100px;
+        }
+        
+        nav ul li a:hover {
+            background: palevioletred;
+        }
     </style>
+
 </head>
 
 <body>
-
+    <nav>
+        <label class="logo">Nav</label>
+        <ul>
+            <li><a href="#">Home1</a></li>
+            <li><a href="#">Home2</a></li>
+            <li><a href="#">Home3</a></li>
+            <li><a href="#">Home4</a></li>
+        </ul>
+    </nav>
 </body>
 
 </html>
