@@ -1,68 +1,388 @@
-@media(max-width: 640px) {
-    nav ul li {
-        text-align: center;
-        display: block;
-        width: 100%
-    }
-}
-
 * {
+    /*消除網頁邊框*/
     margin: 0;
     padding: 0;
-    text-decoration: none;
     list-style: none;
-    font-family: "微軟正黑體";
+    color: #6FBFB7;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: DFKai-sb;
 }
 
-body {
-    background-color: #F0F2F2;
+.logo {
+    margin: 0 0 0 10px;
+    color: #045959;
+}
+
+img {
+    vertical-align: bottom;
+    width: 10%;
+}
+
+.item-group {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0;
+}
+
+.bg img {
+    /*最上方圖片*/
+    width: 100%;
+}
+
+.item {
+    margin: 0 0px 10px;
+}
+
+.text h3 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.pic img {
+    /*設置全圖片*/
+    width: 100%;
+}
+
+.item .pic {
+    margin: 15px;
+    align-self: center;
+}
+
+.header {
+    z-index: 9999;
+    height: 50px;
+    background-color: #ECDBC9;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    /*分散對齊*/
+    align-items: center;
+    /* position: relative; */
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    background-color: #DCF1EF;
+    display: block;
+    /*規定元素以方塊方式呈現*/
+    position: absolute;
+    /*相對於他的父完素進行絕對定位*/
+    top: 5px;
+    right: 10px;
+}
+
+.btn span {
+    opacity: 0;
+    /*區塊內透明*/
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+    /*自動隱藏超出的文字or圖片*/
+}
+
+.btn::before {
+    /*在原本的元素[之前]加入內容*/
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 10px 0px #aaa, 0px 5px 0px #aaa, 0px -5px 0px #aaa, 0px -10px 0px #aaa;
+    /*影子*/
 }
 
 nav {
+    width: 30%;
+    height: 100vh;
+    /*view height式螢幕可視範圍高度的百分比*/
+    background-color: #ECDBC9;
+    position: absolute;
+    top: 50px;
+    left: -100%;
+}
+
+nav a {
+    /*設置裡面的超連結*/
+    display: block;
+    /*link變直排*/
+    text-decoration: none;
+    text-align: center;
+    color: #045959;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ECDBC9;
+    background-color: #ECDBC9;
+}
+
+#menu {
+    position: absolute;
+    /*讓最上方的checkbox隱藏*/
+}
+
+#menu:checked~.header nav {
+    left: 0;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
     width: 100%;
-    /*導覽列寬度*/
-    background: black;
-    height: 50px;
-    /*導覽列高度*/
-    position: fixed
 }
 
-nav ul {
-    float: right;
-    /*顯示在右邊*/
-    margin-right: 10%;
-    /*邊界距離*/
+@media only screen and (max-width:599px) {
+    .col-ss-0 {
+        width: 0%;
+    }
+    .col-ss-1 {
+        width: 8.33%;
+    }
+    .col-ss-1_5 {
+        width: 12.5%;
+    }
+    .col-ss-2 {
+        width: 16.66%;
+    }
+    .col-ss-3 {
+        width: 25%;
+    }
+    .col-ss-4 {
+        width: 33.33%;
+    }
+    .col-ss-5 {
+        width: 41.66%;
+    }
+    .col-ss-6 {
+        width: 50%;
+    }
+    .col-ss-7 {
+        width: 58.33%;
+    }
+    .col-ss-8 {
+        width: 66.66%;
+    }
+    .col-ss-9 {
+        width: 75%;
+    }
+    .col-ss-10 {
+        width: 83.33%;
+    }
+    .col-ss-11 {
+        width: 91.66%;
+    }
+    .col-ss-12 {
+        width: 100%;
+    }
+    .pictures figcaption {
+        font-size: 12px;
+    }
+    .title h2 {
+        font-size: 20px;
+    }
+    .title p,
+    .title h3 {
+        font-size: 15px;
+    }
 }
 
-nav ul li {
-    display: inline-block;
-    /*水平顯示標籤*/
-    line-height: 50px;
-    /*距離頂端*/
-    margin: 0px 30px;
-    /*margin: 上 右 下 左
-                        margin:  0 30 0 30(px)*/
-    font-weight: bolder;
+@media only screen and (min-width:600px) {
+    .col-s-0 {
+        width: 0%;
+    }
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-1_5 {
+        width: 12.5%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+    .pictures figcaption {
+        font-size: 15px;
+    }
+    .title h2 {
+        font-size: 25px;
+    }
+    .title p,
+    .title h3 {
+        font-size: 18px;
+    }
 }
 
-nav ul li a {
-    color: white;
-    font-size: 18px;
+@media only screen and (min-width: 768px) {
+    /*設定桌面及平板顯示*/
+    .pictures figcaption {
+        font-size: 18px;
+    }
+    .title h2 {
+        font-size: 30px;
+    }
+    .title p,
+    .title h3 {
+        font-size: 19px;
+    }
+    .item-group {
+        display: flex;
+        /*彈性盒子，又稱flexbox*/
+    }
+    .two .item {
+        display: flex;
+    }
+    .two .item .text {
+        display: flex;
+        padding: 0 20px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .btn {
+        display: none;
+    }
+    nav {
+        position: relative;
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        top: 0;
+        background-color: transparent;
+        /*透明顏色*/
+    }
+    nav a {
+        border-bottom: none;
+    }
+    .col-0 {
+        width: 0%;
+    }
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-1_5 {
+        width: 12.5%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
 }
 
-label.logo {
-    color: white;
-    font-size: 30px;
-    line-height: 45px;
-    padding: 100px;
-    margin-left: 10%;
+.two .text {
+    padding-top: 25px;
+    align-self: center;
 }
 
-nav ul li a:hover {
-    background: #65858C;
+#footer {
+    background-color: #F2DCE2;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 12px;
 }
 
-section img {
-    width: 80%;
-    margin-top: 50px;
+.pictures {
+    margin: 0;
+    padding: 0;
+}
+
+.pictures img {
+    width: 100%;
+}
+
+.pictures figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pictures img {
+    width: 100%;
+}
+
+.newline {
+    padding: 0;
+    margin: 0;
+}
+
+.blankHeader {
+    padding: 25px;
+}
+
+.title p {
+    padding: 0 20px;
+    text-align: left !important;
+    align-self: center !important;
+}
+
+.title h2 {
+    text-align: center;
+}
+
+marquee {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
